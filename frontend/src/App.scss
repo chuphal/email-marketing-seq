@@ -1,0 +1,124 @@
+.lead-source {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 0.01;
+  font-size: 9px;
+  width: 150px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  padding: 3px;
+
+  > p {
+    margin: 4px;
+  }
+}
+
+.custom-add {
+  border: 2px solid rgb(49, 186, 220);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+
+  .plus {
+    color: rgb(49, 186, 220);
+    font-size: 15px;
+  }
+}
+
+.delay-comp {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  line-height: 0.01;
+  font-size: 9px;
+  width: 150px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  padding: 2px;
+}
+
+.delay-icon-div {
+  margin: 0px 10px 0px 10px;
+}
+
+.delay-icon {
+  width: 25px;
+  height: 30px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.singlemail-div {
+  border: 1px solid black;
+  min-width: 900px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+
+  :hover {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+  }
+}
+
+.subject-part {
+  margin-left: 3rem;
+  margin-top: 7px;
+}
+
+.cross-style {
+  font-size: large;
+}
+.cross-div {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logout-website {
+  font-size: 2rem;
+  transition: transform 0.6s;
+
+  :hover {
+    transform: scale(1.15);
+  }
+}
