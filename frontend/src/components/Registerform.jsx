@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import useRegister from "../hooks/useRegister";
