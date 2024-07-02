@@ -7,7 +7,8 @@
   "scripts": {
     "test": "mocha",
     "start": "node backend/server.js",
-    "server": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+    "build": "npm i"
   },
   "author": "",
   "license": "ISC",
