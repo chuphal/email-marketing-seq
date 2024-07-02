@@ -4,7 +4,7 @@ import { Handle } from "reactflow";
 import Popup from "./Popup";
 import { useAddContext } from "../context/AddContext";
 import useAddNode from "../hooks/useAddNode";
-import { Form } from "react-router-dom";
+import Form from "react-bootstrap/Form";
 
 const CustomAdd = () => {
   const [activePopup, setActivePopup] = useState(null);

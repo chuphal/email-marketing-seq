@@ -5,7 +5,7 @@ import { useAddContext } from "../context/AddContext";
 import Popup from "./Popup";
 import { RxCross2 } from "react-icons/rx";
 import useAddNode from "../hooks/useAddNode";
-import { Form } from "react-router-dom";
+import Form from "react-bootstrap/Form";
 
 const Delay = () => {
   const { data, setData, setNodes, setEdges, removeNode } = useAddContext();
