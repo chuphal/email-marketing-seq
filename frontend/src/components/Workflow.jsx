@@ -1,6 +1,6 @@
 import React from "react";
 import "reactflow/dist/style.css";
-import ReactFlow, { Controls, MiniMap, addEdge } from "reactflow";
+import ReactFlow, { Controls, MiniMap } from "reactflow";
 import Customsource from "./Customsource";
 import CustomAdd from "./CustomAdd";
 import { useAddContext } from "../context/AddContext.jsx";
@@ -22,10 +22,6 @@ const Workflow = () => {
   const { nodes, edges, onNodesChange, onEdgesChange, data, setRemoveNode } =
     useAddContext();
   const { loading, formSubmit } = useSchedule();
-  // const onConnect = useCallback((connection) => {
-  //   const edge = { ...connection, animated: true, id: `${edges.length + 1}` };
-  //   setEdges((prevEdges) => addEdge(edge, prevEdges));
-  // });
 
   const handleSubmit = async () => {
     if (data.delay === -1 || data.coldemail == "" || data.email == "") {
