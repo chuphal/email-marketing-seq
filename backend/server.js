@@ -9,6 +9,8 @@ import cors from "cors";
 import expressWinston from "express-winston";
 import xss from "xss-clean";
 import rateLimiter from "express-rate-limit";
+import path from "path";
+const __dirname = path.resolve();
 const app = express();
 
 //imports..
@@ -43,12 +45,13 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
-
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/coldemail", emailRouter);
+
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+});
 
 app.use(
   expressWinston.errorLogger({
