@@ -27,34 +27,64 @@ const Coldemail = () => {
   };
   return (
     <>
-      <div className="delay-comp" onClick={() => openPopup("popup1")}>
-        <div className="delay-icon-div">
-          <MdOutlineEmail className="delay-icon" />
+      <div className="main-cold-div">
+        <div
+          onClick={() => onNodesChangeFunction(removeNode)}
+          className="cross-div"
+          style={{ float: "right" }}
+        >
+          <RxCross2 className="cross-style" />
         </div>
 
-        <div style={{ width: "100px" }}>
-          <div style={{ float: "right" }}>
-            <div
-              onClick={() => onNodesChangeFunction(removeNode)}
-              className="cross-div"
-            >
-              <RxCross2 className="cross-style" />
-            </div>
+        <div className="delay-comp" onClick={() => openPopup("popup1")}>
+          <div className="delay-icon-div">
+            <MdOutlineEmail className="delay-icon" />
           </div>
-          <h5>Cold Email</h5>
-          <p>{"Subject : " + data.subject}</p>
-        </div>
 
-        <Handle position="bottom" type="source" />
-        <Handle position="top" type="target" />
+          <div style={{ width: "100px" }}>
+            <div>
+              <h5 style={{ fontSize: "12px" }}>Cold Email</h5>
+            </div>
+            <p>{"Subject : " + data.subject}</p>
+          </div>
+
+          <Handle position="bottom" type="source" />
+          <Handle position="top" type="target" />
+        </div>
       </div>
       <Popup isOpen={activePopup === "popup1"} onClose={closePopup}>
-        <p>Coldemail</p>
-        <label>subject</label>
-        <input type="text" ref={subjectRef} required />
-        <label>text</label>
-        <textarea type="text" ref={coldemailRef} required />
-        <button onClick={() => handleSubmit()}>Insert</button>
+        <div className="popup-with-coldemail">
+          <h2>Coldemail</h2>
+          <div className="input-label-div">
+            <label>Subject:</label>
+            <input
+              type="text"
+              ref={subjectRef}
+              placeholder="Type here..."
+              required
+              style={{ marginLeft: "1rem", width: "25rem" }}
+              className="form-control"
+            />
+          </div>
+          <div className="input-label-div">
+            <label>{`Text:`}</label>
+            <textarea
+              type="text"
+              placeholder="Type here..."
+              ref={coldemailRef}
+              required
+              style={{ marginLeft: "34px", width: "25rem", height: "10rem" }}
+              className="form-control"
+            />
+          </div>
+          <button
+            onClick={() => handleSubmit("coldemail")}
+            type="button"
+            className="btn btn-success"
+          >
+            Insert
+          </button>
+        </div>
       </Popup>
     </>
   );

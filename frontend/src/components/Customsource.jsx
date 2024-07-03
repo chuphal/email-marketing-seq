@@ -28,9 +28,27 @@ const Customsource = ({ data: { para1, bottomHandle } }) => {
       </div>
       {bottomHandle && <Handle position="bottom" type="source" />}
       <Popup isOpen={activePopup === "popup1"} onClose={closePopup}>
-        <p>email</p>
-        <input type="email" ref={emailRef} required />
-        <button onClick={() => handleSubmit()}>Insert</button>
+        <div className="popup-with-coldemail">
+          <h2>Email</h2>
+          <div className="input-label-div">
+            <label>To:</label>
+            <input
+              type="email"
+              ref={emailRef}
+              required
+              className="form-control"
+              placeholder="Enter the email..."
+              style={{ marginLeft: "1rem", width: "15rem" }}
+            />
+          </div>
+          <button
+            onClick={() => handleSubmit()}
+            type="button"
+            className="btn btn-success"
+          >
+            Insert
+          </button>
+        </div>
       </Popup>
     </div>
   );

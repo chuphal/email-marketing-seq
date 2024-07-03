@@ -33,6 +33,7 @@ const Navbar = () => {
               <a
                 href="https://email-marketing-seq.onrender.com/api-docs/"
                 className="nav-link link-body-emphasis px-2"
+                target="_blank"
               >
                 docs
               </a>

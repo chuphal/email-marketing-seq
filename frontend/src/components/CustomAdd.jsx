@@ -57,32 +57,95 @@ const CustomAdd = () => {
         </div>
       </div>
       <Popup isOpen={activePopup === "popup1"} onClose={closePopup}>
-        <button onClick={() => handleClick("popup2")}>coldemail</button>
-        <button onClick={() => handleClick("popup3")}>wait</button>
+        <div className="popup-with-buttons">
+          <button
+            onClick={() => handleClick("popup2")}
+            type="button"
+            className="btn btn-primary"
+          >
+            coldemail
+          </button>
+          <button
+            onClick={() => handleClick("popup3")}
+            type="button"
+            className="btn btn-primary"
+            style={{ marginLeft: "2rem" }}
+          >
+            wait
+          </button>
+        </div>
       </Popup>
       <Popup isOpen={activePopup === "popup2"} onClose={closePopup}>
-        <p>Coldemail</p>
-        <label>subject</label>
-        <input type="text" ref={subjectRef} required />
-        <label>text</label>
-        <textarea type="text" ref={coldemailRef} required />
-        <button onClick={() => handleSubmit("coldemail")}>Insert</button>
+        <div className="popup-with-coldemail">
+          <h2>Coldemail</h2>
+          <div className="input-label-div">
+            <label>Subject:</label>
+            <input
+              type="text"
+              ref={subjectRef}
+              placeholder="Type here..."
+              required
+              style={{ marginLeft: "1rem", width: "25rem" }}
+              className="form-control"
+            />
+          </div>
+          <div className="input-label-div">
+            <label>{`Text:`}</label>
+            <textarea
+              type="text"
+              placeholder="Type here..."
+              ref={coldemailRef}
+              required
+              style={{ marginLeft: "34px", width: "25rem", height: "10rem" }}
+              className="form-control"
+            />
+          </div>
+          <button
+            onClick={() => handleSubmit("coldemail")}
+            type="button"
+            className="btn btn-success"
+          >
+            Insert
+          </button>
+        </div>
       </Popup>
       <Popup isOpen={activePopup === "popup3"} onClose={closePopup}>
-        <p>Wait/Delay</p>
-        <input type="number" ref={delayRef} required />
-        <Form.Select
-          aria-label="Default select example"
-          value={time}
-          onChange={handleChange}
-        >
-          <option>Select type</option>
-          <option value="minutes">minutes</option>
-          <option value="hours">hours</option>
-          <option value="days">days</option>
-        </Form.Select>
+        <div className="popup-with-delay">
+          <h2>Wait/Delay</h2>
+          <div className="input-label-div">
+            <label>Delay:</label>
+            <input
+              className="form-control"
+              type="number"
+              ref={delayRef}
+              placeholder="Type a number..."
+              required
+              style={{ marginLeft: "1rem", width: "15rem" }}
+            />
+          </div>
+          <div className="input-label-div">
+            <label>Type:</label>
+            <Form.Select
+              aria-label="Default select example"
+              value={time}
+              onChange={handleChange}
+              style={{ marginLeft: "1rem", width: "15rem" }}
+            >
+              <option>Select type</option>
+              <option value="minutes">minutes</option>
+              <option value="hours">hours</option>
+              <option value="days">days</option>
+            </Form.Select>
+          </div>
 
-        <button onClick={() => handleSubmit("delay")}>Insert</button>
+          <button
+            onClick={() => handleSubmit("delay")}
+            type="button"
+            className="btn btn-success"
+          >
+            Insert
+          </button>
+        </div>
       </Popup>
     </>
   );

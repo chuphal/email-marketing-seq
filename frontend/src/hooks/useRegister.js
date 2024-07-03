@@ -17,7 +17,7 @@ const useRegister = () => {
       if (response.error) {
         throw new Error(response.error);
       }
-      console.log(data);
+      // console.log(data);
       toast.success(data.msg);
 
       // local storage

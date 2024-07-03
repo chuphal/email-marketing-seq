@@ -21,11 +21,9 @@ const Singlemail = (data) => {
     navigate("/");
   };
   return (
-    <div>
-      <div className="singlemail-div" onClick={() => handleClick()}>
-        <span className="subject-part">{data.data.subject}</span>
-        <p></p>
-      </div>
+    <div className="singlemail-div" onClick={() => handleClick()}>
+      <span className="subject-part">{data.data.subject}</span>
+      <p></p>
     </div>
   );
 };
