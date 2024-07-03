@@ -13,6 +13,11 @@ import path from "path";
 const __dirname = path.resolve();
 const app = express();
 
+// swagger
+import swaggerUI from "swagger-ui-express";
+import YAML from "yamljs";
+const swaggerDocument = YAML.load("./swagger.yaml");
+
 //imports..
 import authRouter from "./routes/auth.js";
 import emailRouter from "./routes/coldemail.js";
@@ -44,6 +49,14 @@ app.use(
     statusLevels: true,
   })
 );
+
+app.get("/docs", (req, res) => {
+  res.send(
+    "<h1>Welcome to Bidding App API</h1> <a href='/api-docs'>Documentation</a>"
+  );
+});
+
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/coldemail", emailRouter);

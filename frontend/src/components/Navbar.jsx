@@ -30,9 +30,12 @@ const Navbar = () => {
             </li>
 
             <li className="nav-item">
-              <Link href="#" className="nav-link link-body-emphasis px-2">
-                About
-              </Link>
+              <a
+                href="https://email-marketing-seq.onrender.com/api-docs/"
+                className="nav-link link-body-emphasis px-2"
+              >
+                docs
+              </a>
             </li>
           </ul>
 
